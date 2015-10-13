@@ -1,0 +1,47 @@
+#!//home/lui/anaconda/bin/python
+#-*- coding:utf-8 -*-
+
+#regression lineaire
+
+
+from random import random
+import numpy as np
+import matplotlib.pyplot as plt
+
+ch= raw_input("action = ")
+
+N=50000
+
+
+
+def linear(x, params=(0,1,5)):
+    return(params[1]*x+params[0]+params[2]*np.random.normal(size=len(x)) )
+    
+def linear_hypothesis(x, params=(0,1)):
+    """Linear function f(x)=a*x+b
+    
+    Args:
+        x (numpy.array()) : vector used to generate the output
+        params (tuple of size 2) : b=params[0] and a=params[1]
+    
+    Returns:
+        numpy.array()
+    """
+    a, b = params[1], params[0]
+    return b+a*x
+
+
+
+if ch =='1':
+    x = 10*np.random.random(N)
+    y=linear(x,(0,100,5))
+    plt.scatter(x,y)
+    plt.show()
+
+
+
+else:
+    print("fail")
+
+
+
