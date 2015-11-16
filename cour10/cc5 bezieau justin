@@ -1,0 +1,21 @@
+#!//home/lui/anaconda/bin/python
+#-*- coding:utf-8 -*-
+
+
+from random import random
+import numpy as np
+import matplotlib.pyplot as plt
+
+def trace (m):
+    a=0.0
+    L=m.shape[0]
+    c=m.shape[1]
+    if L==c:
+        for i in range(L):
+            a+=m[i][i]
+        return(a)
+    else:
+        return(0)
+
+m=np.array([[1,2],[3,4]])
+print m,"\n\n trace =",trace(m)
